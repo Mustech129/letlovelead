@@ -1,0 +1,20 @@
+.HERO{
+    background-image: url(../img/modern.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.fashion{
+  background-image: url(../img/fashion.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.read:hover{
+  border: 1px solid  yellowgreen;
+}
+
+.y{
+    color: #3664FA;
+}
