@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Maison Luxe – High Fashion</title>
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    :root{
+      --ink:#0a0a0a;           /* ultra-dark text */
+      --coal:#111827;          /* charcoal */
+      --ivory:#fafafa;         /* off-white */
+      --smoke:#f3f4f6;         /* soft gray */
+      --gold:#f5c542;          /* luxe accent */
+      --gold-deep:#b8860b;     
+      --accent:#1f2937;        /* headers */
+    }
+    body{font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji"; color:var(--ivory); background:#0c0c0e;}
+    a{color:var(--ivory)}
+
+    /* Elegant gradient header */
+    .nav-wrap{
+      background: radial-gradient(1200px 500px at 10% -10%, rgba(245,197,66,.35), transparent 40%),
+                  radial-gradient(900px 500px at 90% -20%, rgba(255,255,255,.12), transparent 50%),
+                  linear-gradient(180deg, #0e0e10, #0b0b0c 70%);
+      border-bottom: 1px solid rgba(255,255,255,.06);
+      backdrop-filter: blur(6px);
+    }
+
+    .brand-mark{letter-spacing:.2rem; font-weight:700}
+    .goldline{height:2px;background: linear-gradient(90deg, transparent, var(--gold), transparent); opacity:.7}
+
+    /* HERO */
+    @media (min-width:320px){
+        .buttons{
+        flex-wrap: wrap;
+    }
+    }
+    .hero .carousel-item{height: 78vh; min-height:520px; position:relative;}
+    .hero .carousel-item::before{content:""; position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,.5), rgba(0,0,0,.65));}
+    .hero .carousel-caption{z-index:3}
+    .hero .cap-wrap{max-width: 780px; margin-inline:auto;}
+    .btn-gold{background:linear-gradient(135deg, #f7d774, var(--gold)); color:#1a1a1a; border:none; box-shadow:0 6px 18px rgba(245,197,66,.25)}
+    .btn-gold:hover{filter:brightness(1.05)}
+    .tag{display:inline-flex; align-items:center; gap:.4rem; padding:.35rem .7rem; border:1px solid rgba(255,255,255,.18); border-radius:999px; backdrop-filter: blur(4px); background:rgba(255,255,255,.06)}
+
+    /* Section shells */
+    section{padding: 72px 0}
+    .section-title{font-weight:700; letter-spacing:.12rem}
+    .section-sub{opacity:.8}
+
+    /* Product cards */
+    .prod-card{background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02)); border:1px solid rgba(255,255,255,.08); border-radius:18px; overflow:hidden; transition:transform .35s ease, box-shadow .35s ease}
+    .prod-card:hover{transform:translateY(-6px); box-shadow:0 12px 40px rgba(0,0,0,.45)}
+    .prod-img{aspect-ratio: 4 / 5; object-fit:cover}
+    .price{color:var(--gold)}
+    .badge-new{position:absolute; top:12px; left:12px; background:linear-gradient(135deg, #fff, #f2e5b9); color:#111; font-weight:700; border-radius:999px; padding:.25rem .65rem; font-size:.75rem}
+
+    /* Lookbook */
+    .look-tile{position:relative; border-radius:20px; overflow:hidden; border:1px solid rgba(255,255,255,.08)}
+    .look-tile img{height:100%; width:100%; object-fit:cover; filter:contrast(1.02)}
+    .look-tile::after{content:""; position:absolute; inset:0; background:linear-gradient(180deg, transparent, rgba(0,0,0,.58))}
+    .look-tile .label{position:absolute; left:16px; bottom:14px; font-weight:600}
+
+    /* Footer */
+    .site-footer{background:linear-gradient(180deg, #0b0b0c, #070708); border-top:1px solid rgba(255,255,255,.06)}
+
+    /* Responsive gradient accents selection by size */
+    /* SM (phones) – warm accent */
+    @media (max-width: 767.98px){
+      .prod-card{border-image: linear-gradient(90deg, #ff9a8b, #ff6a00) 1; border-width:1px; border-style:solid}
+    }
+    /* MD (tablets) – cool accent */
+    @media (min-width:768px) and (max-width: 1199.98px){
+      .prod-card{border-image: linear-gradient(90deg, #00c6ff, #0072ff) 1}
+    }
+    /* LG (desktop) – subtle sidebar bar feel */
+    @media (min-width:1200px){
+      .prod-card{border-left:6px solid transparent; border-image: linear-gradient(180deg, #34d399, #059669) 1 100%}
+    }
+  </style>
+</head>
+<body>
+  <!-- NAV -->
+  <nav class="nav-wrap navbar navbar-dark navbar-expand-lg sticky-top">
+    <div class="container py-2">
+      <a class="navbar-brand brand-mark" href="#">MAISON LUXE</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div id="navContent" class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto gap-lg-3">
+          <li class="nav-item"><a class="nav-link" href="#new">New In</a></li>
+          <li class="nav-item"><a class="nav-link" href="#women">Women</a></li>
+          <li class="nav-item"><a class="nav-link" href="#men">Men</a></li>
+          <li class="nav-item"><a class="nav-link" href="#lookbook">Lookbook</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="goldline"></div>
+  </nav>
+
+  <!-- HERO CAROUSEL -->
+  <header class="hero py-1">
+    <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="600">
+      <div class="carousel-inner">
+        <div class="carousel-item active" style="background:url('https://images.unsplash.com/photo-1520975916090-3105956dac38?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat">
+          <div class="carousel-caption d-flex flex-column justify-content-end h-100 pb-5">
+            <div class="cap-wrap text-start">
+              <span class="tag"><i class="bi bi-stars"></i> NEW SEASON • FW25</span>
+              <h1 class="display-5 fw-bold mt-3">Tailored for the Night</h1>
+              <p class="lead- text-white-50">Sharp silhouettes. Liquid satins. Architecture in motion.</p>
+              <div class="d-flex gap-3 mt-2 buttons">
+                <a href="#new" class="btn btn-gold btn-lg">Shop New Arrivals</a>
+                <a href="#lookbook" class="btn text-gold btn-outline-light btn-lg">View Lookbook</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item" style="background:url('https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat">
+          <div class="carousel-caption d-flex flex-column justify-content-end h-100 pb-5">
+            <div class="cap-wrap text-start">
+              <span class="tag"><i class="bi bi-lightning-charge"></i> LIMITED DROP</span>
+              <h2 class="display-6 fw-bold mt-3">Monochrome Essentials</h2>
+              <p class="text-white-50">Minimal. Precise. Effortlessly luxe.</p>
+              <a href="#men" class="btn btn-gold btn-lg">Explore Menswear</a>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item" style="background:url('https://images.unsplash.com/photo-1509631179647-0177331693ae?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat">
+          <div class="carousel-caption d-flex flex-column justify-content-end h-100 pb-5">
+            <div class="cap-wrap text-start">
+              <span class="tag"><i class="bi bi-bag-heart"></i> EDITOR’S PICK</span>
+              <h2 class="display-6 fw-bold mt-3">The Evening Edit</h2>
+              <p class="text-white-50">Liquid gold accents and sculpted drapes.</p>
+              <a href="#women" class="btn btn-outline-light btn-lg">Shop Womenswear</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- NEW ARRIVALS / PRODUCT GRID -->
+  <section id="new">
+    <div class="container">
+      <div class="d-flex align-items-end justify-content-between mb-4">
+        <div>
+          <h3 class="section-title text-uppercase">New Arrivals</h3>
+          <div class="text-white-50 section-sub">Curated luxury—crafted silhouettes and premium textiles.</div>
+        </div>
+        <a href="#" class="link-light">View all <i class="bi bi-arrow-right"></i></a>
+      </div>
+      <div class="row g-4 row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4">
+        <!-- Card 1 -->
+        <article class="col">
+          <div class="prod-card h-100 position-relative">
+            <span class="badge-new">NEW</span>
+            <img class="w-100 prod-img" src="https://images.unsplash.com/photo-1520974735194-8d95e2aeb3e8?q=80&w=1200&auto=format&fit=crop" alt="Satin Dress" />
+            <div class="p-3">
+              <div class="d-flex justify-content-between align-items-start">
+                <h6 class="mb-1">Satin Column Dress</h6>
+                <span class="price fw-semibold">₦145,000</span>
+              </div>
+              <p class="text-white-50 small mb-3">Liquid satin, bias cut, floor length.</p>
+              <div class="d-flex gap-2">
+                <a class="btn btn-sm btn-gold" href="https://wa.me/2349024414327?text=I'm%20interested%20in%20the%20Satin%20Column%20Dress">Order on WhatsApp</a>
+                <button class="btn btn-sm btn-outline-light">Details</button>
+              </div>
+            </div>
+          </div>
+        </article>
+        <!-- Card 2 -->
+        <article class="col">
+          <div class="prod-card h-100 position-relative">
+            <img class="w-100 prod-img" src="https://images.unsplash.com/photo-1520975922276-6a6f6cc0bb0a?q=80&w=1200&auto=format&fit=crop" alt="Blazer" />
+            <div class="p-3">
+              <div class="d-flex justify-content-between align-items-start">
+                <h6 class="mb-1">Architect Blazer</h6>
+                <span class="price fw-semibold">₦120,000</span>
+              </div>
+              <p class="text-white-50 small mb-3">Structured shoulders, jet-black wool.</p>
+              <div class="d-flex gap-2">
+                <a class="btn btn-sm btn-gold" href="https://wa.me/2349024414327?text=I'm%20interested%20in%20the%20Architect%20Blazer">Order on WhatsApp</a>
+                <button class="btn btn-sm btn-outline-light">Details</button>
+              </div>
+            </div>
+          </div>
+        </article>
+        <!-- Card 3 -->
+        <article class="col">
+          <div class="prod-card h-100 position-relative">
+            <img class="w-100 prod-img" src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=1200&auto=format&fit=crop" alt="Leather Boots" />
+            <div class="p-3">
+              <div class="d-flex justify-content-between align-items-start">
+                <h6 class="mb-1">Chelsea Leather Boots</h6>
+                <span class="price fw-semibold">₦95,000</span>
+              </div>
+              <p class="text-white-50 small mb-3">Hand-finished calfskin, stacked heel.</p>
+              <div class="d-flex gap-2">
+                <a class="btn btn-sm btn-gold" href="https://wa.me/2349024414327?text=I'm%20interested%20in%20the%20Chelsea%20Leather%20Boots">Order on WhatsApp</a>
+                <button class="btn btn-sm btn-outline-light">Details</button>
+              </div>
+            </div>
+          </div>
+        </article>
+        <!-- Card 4 -->
+        <article class="col">
+          <div class="prod-card h-100 position-relative">
+            <img class="w-100 prod-img" src="https://images.unsplash.com/photo-1520975592042-6453be3a8f97?q=80&w=1200&auto=format&fit=crop" alt="Silk Scarf" />
+            <div class="p-3">
+              <div class="d-flex justify-content-between align-items-start">
+                <h6 class="mb-1">Silk Twill Scarf</h6>
+                <span class="price fw-semibold">₦38,000</span>
+              </div>
+              <p class="text-white-50 small mb-3">Hand-rolled edges, signature print.</p>
+              <div class="d-flex gap-2">
+                <a class="btn btn-sm btn-gold" href="https://wa.me/2349024414327?text=I'm%20interested%20in%20the%20Silk%20Twill%20Scarf">Order on WhatsApp</a>
+                <button class="btn btn-sm btn-outline-light">Details</button>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOOKBOOK -->
+  <section id="lookbook">
+    <div class="container">
+      <div class="d-flex align-items-end justify-content-between mb-4">
+        <div>
+          <h3 class="section-title text-uppercase">Lookbook</h3>
+          <div class="text-white-50 section-sub">Editorial moments from the studio.</div>
+        </div>
+        <a href="#" class="link-light">See editorial <i class="bi bi-arrow-right"></i></a>
+      </div>
+      <div class="row g-4">
+        <div class="col-12 col-md-6">
+          <figure class="look-tile"><img src="https://images.unsplash.com/photo-1515202913167-d9a698095ebf?q=80&w=1600&auto=format&fit=crop" alt="Look 1"><figcaption class="label">Noir Tailoring</figcaption></figure>
+        </div>
+        <div class="col-12 col-md-6">
+          <figure class="look-tile"><img src="https://images.unsplash.com/photo-1515202913167-d9a698095ebf?q=80&w=1600&auto=format&fit=crop" alt="Look 2"><figcaption class="label">Gilded Hour</figcaption></figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT / FOOTER -->
+  <footer id="contact" class="site-footer py-5">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-12 col-lg-4">
+          <h5 class="brand-mark">MAISON LUXE</h5>
+          <p class="text-white-50">Abuja • Lagos • Worldwide Shipping</p>
+          <div class="d-flex gap-3">
+            <a class="btn btn-outline-light btn-sm" href="https://instagram.com" target="_blank"><i class="bi bi-instagram"></i></a>
+            <a class="btn btn-outline-light btn-sm" href="https://wa.me/2349024414327" target="_blank"><i class="bi bi-whatsapp"></i></a>
+            <a class="btn btn-outline-light btn-sm" href="mailto:mustechadebayo12@gmail.com"><i class="bi bi-envelope"></i></a>
+          </div>
+        </div>
+        <div class="col-6 col-lg-4">
+          <h6 class="text-uppercase">Contact</h6>
+          <ul class="list-unstyled text-white-50 small">
+            <li>lugbe, Abuja</li>
+            <li>Mon–Sat: 8:00AM – 7:00PM</li>
+            <li>Phone: 0902 441 4327</li>
+          </ul>
+        </div>
+        <div class="col-6 col-lg-4">
+          <h6 class="text-uppercase">Newsletter</h6>
+          <form class="d-flex gap-2">
+            <input type="email" class="form-control bg-dark text-light border-secondary" placeholder="Email address"/>
+            <button class="btn btn-gold" type="button">Join</button>
+          </form>
+        </div>
+      </div>
+      <hr class="border-secondary border-opacity-25 mt-4" />
+      <div class="text-center text-white-50 small">© 2025 Maison Luxe. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

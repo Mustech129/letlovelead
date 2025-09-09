@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Electra Elite – Premium Electronics</title>
+  <!-- Bootstrap 5 + Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    /* ===== Color Palette (Electronics / High-Class) =====
+       Midnight        #0B1220  (bg base)
+       Space           #0F172A  (text base)
+       Steel           #0B132B  (nav/sections)
+       Neon Cyan       #22D3EE  (accent A)
+       Electric Blue   #3B82F6  (accent B)
+       Silver Mist     rgba(255,255,255,.08) (lines)
+    */
+    :root{
+      --midnight:#0B1220;
+      --space:#0F172A;
+      --steel:#0B132B;
+      --cyan:#22D3EE;
+      --eBlue:#3B82F6;
+      --ink:#E2E8F0;         /* light text */
+      --muted:#94A3B8;       /* muted text */
+      --line:rgba(255,255,255,.10);
+    }
+    body{background:linear-gradient(180deg, #090f1a, #0b1220 45%, #0a1020); color:var(--ink); font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;}
+
+    /* ===== Navbar ===== */
+    .nav-wrap{background:linear-gradient(180deg, rgba(15,23,42,.65), rgba(11,19,43,.65)); backdrop-filter: blur(8px); border-bottom:1px solid var(--line);} 
+    .brand{letter-spacing:.18rem; font-weight:800}
+    .nav-link{color:var(--ink)!important; opacity:.9}
+
+    /* ===== Hero (Auto Carousel) ===== */
+    .hero .carousel-item{height:78vh; min-height:520px; position:relative;}
+    .hero .carousel-item::before{content:""; position:absolute; inset:0; background:radial-gradient(1200px 400px at 10% -10%, rgba(34,211,238,.25), transparent 40%), linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,.65));}
+    .hero .carousel-caption{z-index:2}
+    .hero .cap-wrap{max-width:800px; margin-inline:auto; text-align:left}
+    .btn-cyano{background:linear-gradient(135deg, var(--cyan), var(--eBlue)); border:none; color:#061018; font-weight:700; box-shadow:0 10px 30px rgba(59,130,246,.25)}
+    .btn-cyano:hover{filter:brightness(1.05)}
+    .btn-ghost{border:1px solid var(--line); color:var(--ink); background:rgba(255,255,255,.04)}
+
+    /* ===== Section Shells ===== */
+    section{padding:80px 0}
+    .section-title{letter-spacing:.12rem; font-weight:800}
+    .section-sub{color:var(--muted)}
+
+    /* ===== Feature Strip ===== */
+    .feature{border:1px solid var(--line); background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02)); border-radius:16px}
+
+    /* ===== Product Cards ===== */
+    .prod-card{background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015)); border:1px solid var(--line); border-radius:18px; overflow:hidden; transition:transform .35s ease, box-shadow .35s ease}
+    .prod-card:hover{transform:translateY(-6px); box-shadow:0 16px 48px rgba(0,0,0,.45)}
+    .prod-img{aspect-ratio: 4 / 3; object-fit:cover; background:#0a1426}
+    .price{color:var(--cyan); font-weight:700}
+    .spec{font-size:.8rem; padding:.2rem .5rem; border:1px solid var(--line); border-radius:999px; color:var(--muted)}
+
+    /* ===== Responsive Gradient Accents (your earlier preference) ===== */
+    /* SM – warm gradient border */
+    @media (max-width: 767.98px){
+      .prod-card{border-image: linear-gradient(90deg, #ff9a8b, #ff6a00) 1; border-width:1px; border-style:solid}
+    }
+    /* MD – cool blue gradient */
+    @media (min-width:768px) and (max-width: 1199.98px){
+      .prod-card{border-image: linear-gradient(90deg, #00c6ff, #0072ff) 1}
+    }
+    /* LG – teal sidebar accent */
+    @media (min-width:1200px){
+      .prod-card{border-left:6px solid transparent; border-image: linear-gradient(180deg, #34d399, #059669) 1 100%}
+    }
+
+    /* ===== Category Tiles ===== */
+    .cat-tile{position:relative; border-radius:18px; overflow:hidden; border:1px solid var(--line)}
+    .cat-tile img{width:100%; height:100%; object-fit:cover; filter:contrast(1.05)}
+    .cat-tile::after{content:""; position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,.0), rgba(0,0,0,.65))}
+    .cat-tile .label{position:absolute; left:16px; bottom:12px; font-weight:700}
+
+    /* ===== Footer ===== */
+    .site-footer{background:linear-gradient(180deg, #0b1220, #090f1a); border-top:1px solid var(--line)}
+  </style>
+</head>
+<body>
+  <!-- ===== NAV ===== -->
+  <nav class="nav-wrap navbar navbar-dark navbar-expand-lg sticky-top">
+    <div class="container py-2">
+      <a class="navbar-brand brand" href="#">ELECTRA ELITE</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div id="navContent" class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto gap-lg-3">
+          <li class="nav-item"><a class="nav-link" href="#feature">Featured</a></li>
+          <li class="nav-item"><a class="nav-link" href="#categories">Categories</a></li>
+          <li class="nav-item"><a class="nav-link" href="#shop">Shop</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== HERO (AUTO CAROUSEL) ===== -->
+  <header class="hero">
+    <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="2000">
+      <div class="carousel-inner">
+        <div class="carousel-item active" style="background:url('https://images.unsplash.com/photo-1605049349792-2ee5f47b2461?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat">
+          <div class="carousel-caption d-flex flex-column justify-content-end h-100 pb-5">
+            <div class="cap-wrap">
+              <span class="badge rounded-pill text-dark" style="background:linear-gradient(135deg, var(--cyan), var(--eBlue));"><i class="bi bi-stars me-1"></i> NEW • 4K OLEDs</span>
+              <h1 class="display-6 fw-bold mt-3">Premium Electronics. Zero Compromise.</h1>
+              <p class="text-white-50 mb-3">Curated TVs, audio, cooling and smart home—tested for performance.</p>
+              <div class="d-flex gap-3">
+                <a href="#shop" class="btn btn-cyano btn-lg"><i class="bi bi-lightning-charge-fill me-1"></i> Shop Flagships</a>
+                <a href="#categories" class="btn btn-ghost btn-lg">Browse Categories</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item" style="background:url('https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat"></div>
+        <div class="carousel-item" style="background:url('https://images.unsplash.com/photo-1583226077027-b55de2e5cd94?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat"></div>
+      </div>
+      <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+      <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===== FEATURE STRIP ===== -->
+  <section>
+    <div class="container">
+      <div class="row g-3">
+        <div class="col-12 col-md-4 col-lg-6">
+          <div class="feature p-3 d-flex align-items-center gap-3">
+            <i class="bi bi-truck fs-3" style="color:var(--eBlue)"></i>
+            <div>
+              <div class="fw-bold">Same-Day Delivery</div>
+              <div class="section-sub">Abuja city limits</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-4 col-lg-6">
+          <div class="feature p-3 d-flex align-items-center gap-3">
+            <i class="bi bi-whatsapp fs-3" style="color:#25D366"></i>
+            <div>
+              <div class="fw-bold">WhatsApp Ordering</div>
+              <div class="section-sub">Direct chat • Quick checkout</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CATEGORIES ===== -->
+  <section id="categories">
+    <div class="container">
+      <div class="d-flex align-items-end justify-content-between mb-4">
+        <div>
+          <h3 class="section-title text-uppercase">Categories</h3>
+          <div class="section-sub">TV • Audio • Cooling • Lighting</div>
+        </div>
+        <a href="#shop" class="link-light">Shop all <i class="bi bi-arrow-right"></i></a>
+      </div>
+      <div class="row g-4">
+        <div class="col-12 col-md-6 col-xl-3">
+          <a class="cat-tile d-block" href="#shop">
+            <img src="img/tv.jpg" style="background-position: center; background-size: cover;" alt="TV & Audio">
+            <div class="label">TV</div>
+          </a>
+        </div>
+        <div class="col-12 col-md-6 col-xl-3">
+          <a class="cat-tile d-block" href="#shop">
+            <img src="img/fridge.jpg" alt="Cooling & Fans">
+            <div class="label">Cooling & Fans</div>
+          </a>
+        </div>
+        <div class="col-12 col-md-6 col-xl-3">
+          <a class="cat-tile d-block" href="#shop">
+            <img src="img/light.jpg" alt="Kitchen">
+            <div class="label">Kitchen</div>
+          </a>
+        </div>
+        <div class="col-12 col-md-6 col-xl-3">
+          <a class="cat-tile d-block" href="#shop">
+            <img src="img/light.jpg" alt="Smart Lighting">
+            <div class="label">Smart Lighting</div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SHOP / PRODUCT GRID ===== -->
+  <section id="shop">
+    <div id="feature" class="container">
+      <div class="d-flex align-items-end justify-content-between mb-4">
+        <div>
+          <h3 class="section-title text-uppercase">Featured Products</h3>
+          <div class="section-sub">Curated bestsellers with verified performance</div>
+        </div>
+        <a href="#" class="link-light">View all <i class="bi bi-arrow-right"></i></a>
+      </div>
+
+      <div class="row g-4 row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4">
+        <!-- Product 1 -->
+        <article class="col">
+          <div class="prod-card h-100">
+            <img class="w-100 prod-img" src="img/Modern 4K OLED on Sleek Stand.png" alt="4K OLED TV" />
+            <div class="p-3">
+              <div class="d-flex justify-content-between align-items-start">
+                <h6 class="mb-1">55" 4K OLED TV</h6>
+                <span class="price">₦820,000</span>
+              </div>
+              <div class="d-flex flex-wrap gap-2 my-2">
+                <span class="spec">OLED</span>
+                <span class="spec">120Hz</span>
+                <span class="spec">Dolby Vision/Atmos</span>
+              </div>
+              <div class="d-flex gap-2">
+                <a class="btn btn-sm btn-cyano" href="https://wa.me/2349024414327?text=I'm%20interested%20in%2055%20inch%204K%20OLED%20TV"><i class="bi bi-whatsapp me-1"></i>Order</a>
+             
+              </div>
+            </div>
+          </div>
+        </article>
+        <!-- Product 2 -->
+        <article class="col">
+          <div class="prod-card h-100">
+            <img class="w-100 prod-img" src="img/Smart Lighting Setup in Modern Home.png" alt="Bluetooth Speaker" />
+            <div class="p-3">
+              <div class="d-flex justify-content-between align-items-start">
+                <h6 class="mb-1">Hi‑Fi Bluetooth Speaker</h6>
+                <span class="price">₦165,000</span>
+              </div>
+              <div class="d-flex flex-wrap gap-2 my-2">
+                <span class="spec">60W RMS</span>
+                <span class="spec">AptX HD</span>
+                <span class="spec">12h Battery</span>
+              </div>
+              <div class="d-flex gap-2">
+                <a class="btn btn-sm btn-cyano" href="https://wa.me/2349024414327?text=I'm%20interested%20in%20the%20Hi‑Fi%20Bluetooth%20Speaker"><i class="bi bi-whatsapp me-1"></i>Order</a>
+              </div>
+            </div>
+          </div>
+        </article>
+        <!-- Product 3 -->
+        <article class="col">
+          <div class="prod-card h-100">
+            <img class="w-100 prod-img" src="img/inverter-ac.jpg" alt="Inverter AC" />
+            <div class="p-3">
+              <div class="d-flex justify-content-between align-items-start">
+                <h6 class="mb-1">1.5HP Inverter AC</h6>
+                <span class="price">₦410,000</span>
+              </div>
+              <div class="d-flex flex-wrap gap-2 my-2">
+                <span class="spec">Energy‑Saving</span>
+                <span class="spec">Ionizer</span>
+                <span class="spec">Low‑Noise</span>
+              </div>
+              <div class="d-flex gap-2">
+                <a class="btn btn-sm btn-cyano" href="https://wa.me/2349024414327?text=I'm%20interested%20in%201.5HP%20Inverter%20AC"><i class="bi bi-whatsapp me-1"></i>Order</a>
+              </div>
+            </div>
+          </div>
+        </article>
+        <!-- Product 4 -->
+        <article class="col">
+          <div class="prod-card h-100">
+            <img class="w-100 prod-img" src="img/Smart Lighting Setup in Modern Home.png" alt="Smart Bulb Kit" />
+            <div class="p-3">
+              <div class="d-flex justify-content-between align-items-start">
+                <h6 class="mb-1">Smart Bulb Kit</h6>
+                <span class="price">₦28,000</span>
+              </div>
+              <div class="d-flex flex-wrap gap-2 my-2">
+                <span class="spec">RGB + Warm</span>
+                <span class="spec">Wi‑Fi</span>
+                <span class="spec">Voice Control</span>
+              </div>
+              <div class="d-flex gap-2">
+                <a class="btn btn-sm btn-cyano" href="https://wa.me/2349024414327?text=I'm%20interested%20in%20the%20Smart%20Bulb%20Kit"><i class="bi bi-whatsapp me-1"></i>Order</a>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT / FOOTER ===== -->
+  <footer id="contact" class="site-footer py-5">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-12 col-lg-4">
+          <h5 class="brand">ELECTRA ELITE</h5>
+          <p class="section-sub">Abuja • Lagos • Nationwide Delivery</p>
+          <div class="d-flex gap-3">
+            <a class="btn btn-outline-light btn-sm" href="https://instagram.com" target="_blank"><i class="bi bi-instagram"></i></a>
+            <a class="btn btn-outline-light btn-sm" href="https://wa.me/2349024414327" target="_blank"><i class="bi bi-whatsapp"></i></a>
+            <a class="btn btn-outline-light btn-sm" href="mailto:mustechadebayo12@gmail.com"><i class="bi bi-envelope"></i></a>
+          </div>
+        </div>
+        <div class="col-6 col-lg-4">
+          <h6 class="text-uppercase">Visit</h6>
+          <ul class="list-unstyled section-sub mb-0">
+            <li>lugbe, Abuja</li>
+            <li>Mon–Sat: 8:00AM – 7:00PM</li>
+            <li>Phone: 0902 441 4327</li>
+          </ul>
+        </div>
+        <div class="col-6 col-lg-4">
+          <h6 class="text-uppercase">Newsletter</h6>
+          <form class="d-flex gap-2">
+            <input type="email" class="form-control bg-dark text-light border-secondary" placeholder="Email address"/>
+            <button class="btn btn-cyano" type="button">Join</button>
+          </form>
+        </div>
+      </div>
+      <hr class="border-secondary border-opacity-25 mt-4" />
+      <div class="text-center section-sub">© 2025 Electra Elite. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
