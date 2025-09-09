@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ElectroMart - Electrical Materials</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/index.css">
+  <style>
+      :root{
+      --ink:#0a0a0a;           /* ultra-dark text */
+      --coal:#111827;          /* charcoal */
+      --ivory:#fafafa;         /* off-white */
+      --smoke:#f3f4f6;         /* soft gray */
+      --gold:#f5c542;          /* luxe accent */
+      --gold-deep:#b8860b;     
+      --accent:#1f2937;        /* headers */}
+
+
+      body{font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji"; color:var(--ivory); background:#0c0c0e;}
+    a{color:var(--ivory)}
+    .nav-wrap{
+      background: radial-gradient(1200px 500px at 10% -10%, #8fa7f8, transparent 40%),
+                  radial-gradient(900px 500px at 90% -20%, #3664FA, transparent 50%),
+                  linear-gradient(180deg, #0e0e10, #0b0b0c 70%);
+      border-bottom: 1px solid rgba(255,255,255,.06);
+      backdrop-filter: blur(6px);
+    }
+
+    .input{
+      background: radial-gradient(1200px 500px at 10% -10%, #2656f4, transparent 40%),
+                  radial-gradient(900px 500px at 90% -20%, #3664FA, transparent 50%),
+                  linear-gradient(180deg, #0e0e10, #000009 70%);
+      border-bottom: 1px solid rgba(255,255,255,.06);
+      backdrop-filter: blur(6px);
+    }
+
+    .btnt{
+      color: white;
+      background-color: #3664FA;
+      transition: all ease-in-out 200ms;
+    }
+    .btnt:hover{
+      color: white;
+      background-color: #0e37bf;
+    }
+    
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class=" nav-wrap navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">ElectroMart</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#categories">Categories</a></li>
+          <li class="nav-item"><a class="nav-link" href="fashion.html">Shop</a></li>
+          <li class="nav-item"><a  class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <div class="hero text-center text-dark" style=" height: 78vh; text-align: center; background-color: #1e1e1e;">
+      <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="2000" >
+        <div class="carousel-inner" style=" border-radius: 10px; ">
+          <div class="carousel-item active HERO" style="border-radius: 10px; padding-top: 11rem; height: 78vh; justify-content: center; width:100%;">
+            <h1 class="text-light fw-bold"><i class="bi bi-patch-check-fill"></i>Trusted Electrical <span class="y">Materials </span></h1>
+            <p class="lead text-white">Bulbs, Fans,TVs, fridge, Wires, Switches & More</p>
+            <a href="ele.html" class="btn btnt btn-lg"><i class="bi bi-plug-fill"></i>Start Shopping</a>
+          </div>
+          <div class="carousel-item fashion text-light" style="  padding-top: 11rem; height: 78vh; justify-content: center; width:100%;">
+            <div class="">
+              <h2 class="fw-bold" style="font-size: 2.5rem;"><i class="bi  bi-bag-fill"></i> High Fashion <span class="y">Store</span></h2>
+              <p class="lead" style="color: #ffffff;">Lorem ipsum dolor sit amet, consectetur adipisicing <br> Neque saepe itaque aliquam doloremque accusamus <br>
+                 odio asperiores aperiam quibusdam laboriosam voluptatibus <br> dicta, libero nostrum ipsum eaque ipsam non corrupti. Unde, minima.</p>
+                 <a href="fashion.html" class="btn btnt btn-lg" type="button"><i class="bi bi-stars"></i>shop now</a>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+          </button>
+        </div>
+      </div>
+  </div>
+
+<!-- Categories -->
+<section id="categories" class="py-5 bg-dark text-light">
+  <div class="container">
+    <h2 class="text-center mb-4 text-light fw-bold">Shop by Category</h2>
+    <div class="row g-4 justify-content-center">
+      
+      <div class="col-md-5 col-lg-4">
+        <div class="card text-center shadow-sm text-light bg-dark" style="align-items: center;">
+          <img 
+            src="https://images.unsplash.com/photo-1520975916090-3105956dac38?q=80&w=1600&auto=format&fit=crop" 
+            class="card-img-top img-fluid" 
+            style="height: 250px; object-fit: cover; width: 100%;" 
+            alt="Fashion"
+            loading="lazy">
+          <div class="card-body mb-0">
+            <h5>Fashion Store</h5>
+          </div>
+          <a href="fashion.html" class="mb-2 btn btnt" style="width: fit-content;">
+            <i class="bi bi-gem me-2"></i>Visit our virtual fashion store
+          </a>
+        </div>
+      </div>
+      
+      <div class="col-md-5 col-lg-4">
+        <div class="card text-center shadow-sm text-light bg-dark" style="align-items: center;">
+          <img 
+            src="img/wash.jpg" 
+            class="card-img-top img-fluid" 
+            style="height: 250px; object-fit: cover; width: 100%;" 
+            alt="Electronics"
+            loading="lazy">
+          <div class="card-body">
+            <h5>Electronics Store</h5>
+          </div>
+          <a href="ele.html" class="btn btnt mb-2" style="width: fit-content;">
+            <i class="bi bi-lightning-charge-fill"></i>Visit our virtual electronics store
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Featured Products -->
+<section id="products" class="py-5" style="background-color: #1e1e1e;">
+  <div class="container">
+    <h2 class="text-center mb-4 fw-bold">Featured Products</h2>
+    <div class="row g-4">
+      <div class="col-md-3">
+        <div class="card product-card shadow-sm bg-dark text-light">
+          <img src="img/johannes-plenio-fmTde1Fe23A-unsplash.jpg" style="height: 200px;" class="card-img-top" alt="LED Bulb" loading="lazy">
+          <div class="card-body text-center">
+            <h5>LED Bulb 12W</h5>
+            <p class="price">₦1,200</p>
+            <a href="#" class="btn  btnt "><i class="bi bi-cart4 pe-2"></i>Add to Cart</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card product-card shadow-sm bg-dark text-light">
+          <img src="img/fan.jpg" style="height: 200px;" class=" img-fluid card-img-top" alt="Fan" loading="lazy">
+          <div class="card-body text-center">
+            <h5>Ceiling Fan</h5>
+            <p class="price">₦18,000</p>
+            <a href="#" class="btn btnt "><i class="bi bi-cart4 pe-2"></i>Add to Cart</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card product-card shadow-sm bg-dark text-light  ">
+          <img src="img/wire.jpg" class="card-img-top" alt="Wire" loading="lazy">
+          <div class="card-body text-center">
+            <h5>Copper Wire Roll</h5>
+            <p class="price">₦25,000</p>
+            <a href="#" class="btn btnt "><i class="bi bi-cart4 pe-2"></i>Add to Cart</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card product-card shadow-sm  bg-dark text-light">
+          <img src="img/wall-sucket.jpg" style="height: 200px;" class="card-img-top" alt="Switch" loading="lazy">
+          <div class="card-body text-center">
+            <h5>Wall Switch</h5>
+            <p class="price">₦2,000</p>
+            <a href="#" class="btn btnt "><i class="bi bi-cart4 pe-2"></i> Add to Cart</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+  <!--FAQ-->
+  <section class="py-5 bg-dark">
+    <div class="container">
+      <h2 class="text-center py-4">frequently asked questions (FAQ)</h2>
+      <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+      <button class="accordion-button text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+             Do you deliver nationwide/internationally?
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse show text-light" data-bs-parent="#accordionExample" style="background-color: #000000 ;">
+      <div class="accordion-body">
+        <strong>
+          Yes! We deliver to all states within Nigeria, Nationwide delivery typically takes 2–5 working days depending on your location <br>you’ll receive a tracking code once your order is dispatched 
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+        What payment methods do you accept?
+      </button>
+    </h2>
+    <div id="collapseTwo" class="accordion-collapse collapse text-light" data-bs-parent="#accordionExample" style="background-color: #000000 ;">
+      <div class="accordion-body">
+        <strong>We provide multiple secure payment options to make shopping easy and convenient. You can pay using debit or credit cards (Visa, MasterCard, Verve), secure online transfers, or through trusted payment gateways. For customers who prefer, we also offer bank deposit or mobile money options.
+           In selected locations, cash on delivery is available. All transactions are protected with industry-standard encryption to ensure your payment details remain safe.
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+        How do I contact customer support?
+      </button>
+    </h2>
+    <div id="collapseThree" class="accordion-collapse collapse text-light" data-bs-parent="#accordionExample" style="background-color: #000000 ;">
+      <div class="accordion-body">
+        <strong>You can reach our support team through multiple channels, via email for detailed inquiries, or by phone for urgent issues.
+           We also respond on WhatsApp and social media. Our team is available during business hours to help with orders, returns, product details, or any concerns.      </div>
+    </div>
+  </div>
+</div>
+    </div>
+  </section>
+
+
+  <!--contact-->
+  <section id="contact" class="p-5 w-100 ju bg-dark">
+  <div class="container  py-4 w-md-90 w-lg-50">
+    <div class="mx-auto text-center">
+      <h3 class="mb-3" style="font-size: 3rem;">contact <span class="y">us</span></h3>
+      <p class="lead mb-3" style="font-size: 1.2rem;">leave us a message, we will get back to you as soon as possible</p>
+    </div>
+    <form action="https://formspree.io/f/xdklndvv"  style="border-radius: 5px; max-width: 600px;" class="p-4 w-md-90 w-lg-50 py-4 mx-auto  input" method="POST">
+      <div class=" mb-3">
+        <label for="name" class="text-light mb-2">Your name</label>
+        <input id="name" name="name" type="text" class="bg-dark text-light form-control" placeholder="your name" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="phone" class="text-light mb-2">Your phone number</label>
+        <input id="phone" name="phone" type="text" class="bg-dark text-light form-control border" placeholder="your phone number" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="email" class="text-light mb-2">Your email</label>
+        <input id="email" name="email" type="email" class="bg-dark text-light form-control" placeholder="your email" required>
+      </div>
+      <div class="mb-3">
+        <label for="message" class="mb-2"> message</label>
+        <textarea class="form-control bg-dark text-light" style="height: 100px;" name="message" id="messages" placeholder="messages here..."></textarea>
+      </div>
+
+      <button class="btn btnt mx-auto d-flex" type="submit">Send message</button>
+    </form>
+  </div>
+</section>
+
+<section class="py-5 bg-dark">
+  <div id="Blog" class="container g-3">
+    <div class="row g-4">
+      <div class="col-12 col-md-6 col-lg-6">
+        <div class="card">
+          <div class="card-body fw-bold" style="font-size: 20px;"> top 5 gatgets every home need in 2025
+            <h5 class="card-title"> here are top 5 gadget for your home</h5>
+            <a href="top-5-gadget.html" class="bi bi-arrow-right btn read" style="border: 1px solid #0e37bf; color: #0e37bf;"> read more</a>
+          </div>
+        </div>
+      </div>
+      <div id="blogm" class="col-12 col-md-6 col-lg-6">
+        <div class="card">
+          <div class="card-body fw-bold" style="font-size: 20px;">How to Choose the Right TV for Your Home
+            <h5 class="card-title"> here are top 5 gadget for your home</h5>
+            <a href="right-tv.html" class="bi bi-arrow-right btn read" style="border: 1px solid #0e37bf; color: #0e37bf;"> read more</a>
+          </div>
+        </div>
+      </div>
+      <div id="blogn" class="col-12 col-md-6 col-lg-6">
+        <div class="card">
+          <div class="card-body fw-bold" style="font-size: 20px;">Why Smart Lighting is the Future
+            <h5 class="card-title"> here are top 5 gadget for your home</h5>
+            <a href="smart.html" class="bi bi-arrow-right btn read" style="border: 1px solid #0e37bf; color: #0e37bf;"> read more</a>
+          </div>
+        </div>
+      </div>
+      <div id="blogo" class="col-12 col-md-6 col-lg-6">
+        <div class="card">
+          <div class="card-body fw-bold" style="font-size: 20px;"> The Best Cooling Appliances for Hot Nigerian Weather
+            <h5 class="card-title"> here are top 5 gadget for your home</h5>
+            <a href="cooling.html" class="bi bi-arrow-right btn read" style="border: 1px solid #0e37bf; color: #0e37bf;"> read more</a>
+          </div>
+        </div>
+      </div>
+      <div id="blogp" class="col-12 col-md-6 col-lg-6">
+        <div class="card">
+          <div class="card-body fw-bold" style="font-size: 20px;"> Top Fashion Trends in 2025 You Can’t Ignore
+            <h5 class="card-title"> here are top 5 gadget for your home</h5>
+            <a href="fashionblog.html" class="bi bi-arrow-right btn read" style="border: 1px solid #0e37bf; color: #0e37bf;"> read more</a>
+          </div>
+        </div>
+      </div>
+      <div id="blogr" class="col-12 col-md-6 col-lg-6">
+        <div class="card">
+          <div class="card-body fw-bold" style="font-size: 20px;"> top 5 gatgets every home need in 2025
+            <h5 class="card-title"> here are top 5 gadget for your home</h5>
+            <a href="top-5-gadget.html" class="bi bi-arrow-right btn read" style="border: 1px solid #0e37bf; color: #0e37bf;"> read more</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+
+
+  <!-- Footer -->
+     <!-- CONTACT / FOOTER -->
+  <footer id="contact" class="site-footer py-5">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-12 col-lg-4">
+          <h5 class="brand-mark">MAISON LUXE</h5>
+          <p class="text-white-50">Abuja • Lagos • Worldwide Shipping</p>
+          <div class="d-flex gap-3">
+            <a class="btn btn-outline-danger btn-danger text-light btn-sm" href="https://instagram.com" target="_blank"><i class="bi bi-instagram"></i></a>
+            <a class="btn btn-outline-success text-light btn-success btn-sm" href="https://wa.me/2349024414327" target="_blank"><i class="bi bi-whatsapp"></i></a>
+            <a class="btn btn-outline-dark text-light bg-dark btn-sm" href="mailto:mustechadebayo12@gmail.com"><i class="bi bi-envelope"></i></a>
+          </div>
+        </div>
+        <div class="col-6 col-lg-4">
+          <h6 class="text-uppercase">Contact</h6>
+          <ul class="list-unstyled text-white-50 small">
+            <li>
+              lugbe, Abuja</li>
+            <li>Mon–Sat: 8:00AM – 7:00PM</li>
+            <li>Phone: 0902 441 4327</li>
+          </ul>
+        </div>
+        <div class="col-6 col-lg-4">
+          <h6 class="text-uppercase">Newsletter</h6>
+          <form class="d-flex gap-2">
+            <input type="email" class="form-control bg-dark text-light border-secondary" placeholder="Email address"/>
+            <button class="btn btnt" type="button">Join</button>
+          </form>
+        </div>
+      </div>
+      <hr class="border-secondary border-opacity-25 mt-4" />
+      <div class="text-center text-white-50 small">© 2025 Maison Luxe. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
